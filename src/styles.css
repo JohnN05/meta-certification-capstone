@@ -1,0 +1,172 @@
+*{
+    border: none;
+    color: black;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+h1{
+    color: #f4ce14;
+    font-family: 'Markazi Text', sans-serif;
+    font-size: 64px;
+    font-weight: normal;
+}
+
+h2{
+    color: white;
+    font-family: 'Markazi Text', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h3, .header{
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p, .Footer li, .Footer a{
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+ul{
+    list-style: none;
+}
+
+button{
+    border-radius: 15px;
+    background-color: #f4ce14;
+    height: 55px;
+    width: auto;
+}
+
+button>h3{
+    margin: 0 25px 0 25px;
+}
+
+nav.header>ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    gap:2em;
+    margin: 0 20vw 0 20vw;
+}
+
+.header li{
+    align-items: center;
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+
+nav.header a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: end66;
+    height: 100%;
+    width: 100%;
+}
+
+nav.header>ul.sidebar{
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width:250px;
+    z-index: 999;
+    box-shadow: 10px 0 10px rgba(0,0,0,0.1);
+}
+
+nav.header>ul.sidebar{
+    align-items: flex-start;
+    background-color: white;
+    flex-direction: column;
+    justify-content:start;
+    margin: 0;
+    padding: 2em 0 0 2em;
+}
+
+ul.sidebar>li{
+    height: 60px;
+}
+
+nav.header .mobileShow{
+    display: none;
+}
+
+nav.footer{
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    padding: 50px 20vw 50px 20vw;
+}
+
+.footer>section{
+    flex: 1;
+    min-width: 150px;
+    padding: 2em 0 2em 0;
+}
+
+.display{
+    background-color: #495e57;
+    display:flex;
+    gap: 2em;
+    height: 320px;
+    justify-content: space-between;
+    padding: 2em 20vw 0 20vw;
+    margin: 0 0 110px 0;
+}
+
+.display>article{
+    flex: 1;
+}
+
+.display p{
+    color:white;
+}
+
+.display button{
+    margin: 10% 0 0 0;
+}
+
+.imageContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.display img{
+    border-radius: 15px;
+    height: 120%;
+    width: 80%;
+    object-fit: cover;
+}
+
+@media(max-width: 768px){
+    nav.header .mobileShow{
+        display: block;
+    }
+
+    nav.header>ul{
+        margin: 1em;
+    }
+
+    nav.header li{
+        height: 50px;
+    }
+    nav.header .mobileHide{
+        display:none;
+    }
+
+    .display{
+        padding: 2em 1em 0 1em;
+    }
+}
