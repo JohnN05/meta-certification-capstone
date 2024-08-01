@@ -161,6 +161,68 @@ nav.Footer{
     object-fit: cover;
 }
 
+.Card{
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    display: grid;
+    grid-gap: 0.6em;
+    grid-template-rows: 180px 25px 80px 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'image image'
+    'name price'
+    'description description'
+    'order order';
+    height: auto;
+    width: 300px;
+}
+
+.Card>img{
+    border-radius: 10px;
+    grid-area: image;
+    object-fit: cover;
+    height: 100%;
+    width: 100%
+}
+
+.Card>h3{
+    grid-area: name;
+    margin-left: 1em;
+}
+
+.Card>h4{
+    grid-area: price;
+    justify-self: flex-end;
+    margin-right: 1em;
+
+    color: #ee9972;
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Card>p{
+    color: #495e57;
+    grid-area: description;
+    margin: 0 1em 0 1em;
+}
+
+.Card>div{
+    align-items: center;
+    display: flex;
+    gap: 0.2em;
+    grid-area: order;
+    margin-left: 1em;
+    height: 100%;
+    width: 100%;
+}
+
+.CardImage{
+    
+    width: 100%;
+    height:100%;
+}
+
 @media(max-width: 768px){
     nav.Header .mobileShow{
         align-items: center;
