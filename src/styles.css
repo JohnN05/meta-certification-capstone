@@ -174,7 +174,7 @@ nav.Footer{
     'description description'
     'order order';
     height: auto;
-    width: 300px;
+    width: 320px;
 }
 
 .Card>img{
@@ -246,6 +246,90 @@ nav.Footer{
 .Cards{
     flex-wrap: wrap;
     
+}
+
+.Rating{
+    display: flex;
+    gap: 1%;
+    width:80%;
+
+    align-self: flex-end;
+    align-items: center;
+    justify-items: center;
+}
+
+.Rating div{
+    flex:1;
+}
+
+.Star{
+    width: 80%;
+    object-fit: cover;
+}
+
+.Testimonial{
+    display: grid;
+    grid-template-rows: 30px 100px 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'title stars'
+    'picture name'
+    'review review';
+    grid-gap: 5px;
+
+    align-items: center;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    justify-items: center;
+    padding: 15px;
+    width:300px;
+
+}
+
+.Testimonial>h3{
+    grid-area:title;
+}
+
+.Testimonial>.Rating{
+    grid-area:stars;
+}
+
+.Testimonial>img{
+    border-radius: 50px;
+    grid-area:picture;
+    height: 100%
+}
+
+.Testimonial>.TestimonialName{
+    grid-area:name;
+}
+
+.Testimonial>p{
+    grid-area:review;
+}
+
+.TestimonialsSection{
+    align-items: center;
+    background-color: #fbdabb;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    justify-content: space-evenly;
+    padding: 0 20vw 0 20vw
+}
+
+.TestimonialsSection h1{
+    color: black;
+}
+
+.Testimonials{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
 }
 
 @media(max-width: 768px){
