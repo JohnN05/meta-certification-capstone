@@ -21,7 +21,7 @@ h2{
     font-weight: bold;
 }
 
-h3, .header{
+h3, .Header{
     font-family: 'Karla', sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -44,11 +44,15 @@ button{
     width: auto;
 }
 
+button:hover{
+    background-color: white;
+}
+
 button>h3{
     margin: 0 25px 0 25px;
 }
 
-nav.header>ul{
+nav.Header>ul{
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -57,23 +61,13 @@ nav.header>ul{
     margin: 0 20vw 0 20vw;
 }
 
-.header li{
+.Header li{
     align-items: center;
     display: flex;
     height: 100px;
-    width: 100%;
 }
 
-nav.header a{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: end66;
-    height: 100%;
-    width: 100%;
-}
-
-nav.header>ul.sidebar{
+nav.Header>ul.sidebar{
     display:none;
     position: fixed;
     top:0;
@@ -84,7 +78,7 @@ nav.header>ul.sidebar{
     box-shadow: 10px 0 10px rgba(0,0,0,0.1);
 }
 
-nav.header>ul.sidebar{
+nav.Header>ul.sidebar{
     align-items: flex-start;
     background-color: white;
     flex-direction: column;
@@ -97,12 +91,13 @@ ul.sidebar>li{
     height: 60px;
 }
 
-nav.header .mobileShow{
+nav.Header .mobileShow{
     display: none;
 }
 
-nav.footer{
+nav.Footer{
     align-items: flex-start;
+    background-color: #495e57;
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
@@ -110,15 +105,30 @@ nav.footer{
     padding: 50px 20vw 50px 20vw;
 }
 
-.footer>section{
+.Footer>section{
     flex: 1;
     min-width: 150px;
     padding: 2em 0 2em 0;
 }
 
-.display{
+.Footer img{
+    background-color: white;
+    border-radius: 15px;
+    padding: 1em;
+}
+
+.Footer h3{
+    color: #f4ce14;
+}
+
+.Footer li, .Footer a{
+    color:white;
+}
+
+.CallToAction{
     background-color: #495e57;
     display:flex;
+    flex-wrap: wrap;
     gap: 2em;
     height: 320px;
     justify-content: space-between;
@@ -126,15 +136,16 @@ nav.footer{
     margin: 0 0 110px 0;
 }
 
-.display>article{
+.CallToAction>article{
     flex: 1;
+    height: 100%;
 }
 
-.display p{
+.CallToAction p{
     color:white;
 }
 
-.display button{
+.CallToAction button{
     margin: 10% 0 0 0;
 }
 
@@ -143,7 +154,7 @@ nav.footer{
     justify-content: flex-end;
 }
 
-.display img{
+.CallToAction img{
     border-radius: 15px;
     height: 120%;
     width: 80%;
@@ -151,22 +162,27 @@ nav.footer{
 }
 
 @media(max-width: 768px){
-    nav.header .mobileShow{
-        display: block;
+    nav.Header .mobileShow{
+        align-items: center;
+        display: flex;
     }
 
-    nav.header>ul{
+    nav.Header>ul{
         margin: 1em;
     }
 
-    nav.header li{
+    nav.Header li{
         height: 50px;
     }
-    nav.header .mobileHide{
+    nav.Header .mobileHide{
         display:none;
     }
 
     .display{
         padding: 2em 1em 0 1em;
+    }
+
+    section>.imageContainer{
+        display:none;
     }
 }
