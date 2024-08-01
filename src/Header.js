@@ -1,20 +1,20 @@
 import logo from './assets/Logo.svg';
 import burger from './assets/burger.svg';
-import './styles.css';
+import {Link} from 'react-router-dom';
 
 function Header(){
     return(
         
-        <nav className="header">
+        <nav className="Header">
             
             <ul>
-                <li className="mobileShow"><img alt="burger icon" src={burger}></img></li>
+                <li className="mobileShow" ><img alt="burger icon" height="25px"src={burger}></img></li>
                 <li className="mobileHide"><img alt="Little Lemon Logo" src={logo}></img></li>
-                <li className="mobileHide"><a href='./index.html'>Home</a></li>
-                <li className="mobileHide"><a href='./about.html'>About</a></li>
-                <li className="mobileHide"><a href='./reservations.html'>Reservations</a></li>
-                <li className="mobileHide"><a href='./order.html'>Order Online</a></li>
-                <li className="mobileHide"><a href='./login.html'>Login</a></li>
+                <li className="mobileHide"><Link to="/">Home</Link></li>
+                <li className="mobileHide"><Link to="/">About</Link></li>
+                <li className="mobileHide"><Link to="/booking">Reservations</Link></li>
+                <li className="mobileHide"><Link to="/">Order online</Link></li>
+                <li className="mobileHide"><Link to="/">Login</Link></li>
             </ul>
             <ul className='sidebar'>
                 <li><img alt="Little Lemon Logo" src={logo}></img></li>

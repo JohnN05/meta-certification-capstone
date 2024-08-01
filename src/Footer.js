@@ -1,7 +1,8 @@
-import logo from './assets/Logo.svg'
+import logo from './assets/Logo.svg';
+import {Link} from 'react-router-dom';
 function Footer(){
     return(
-        <nav className="footer">
+        <nav className="Footer">
             <section>
                 <img alt='Little Lemon Logo' src={logo}></img>
             </section>
@@ -9,12 +10,11 @@ function Footer(){
             <section>
                 <h3>Navigation</h3>
                 <ul>
-                    <li><a href='./index.html'>Home</a></li>
-                    <li><a href='./about.html'>About</a></li>
-                    <li><a href='./menu.html'>Menu</a></li>
-                    <li><a href='/reservations.html'>Reservations</a></li>
-                    <li><a href='./order.html'>Order Online</a></li>
-                    <li><a href='./login.html'>Login</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/booking">Reservations</Link></li>
+                    <li><Link to="/">Order online</Link></li>
+                    <li><Link to="/">Login</Link></li>
                 </ul>
             </section>
             <section>
