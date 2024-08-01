@@ -1,18 +1,22 @@
-import restauranfood from './assets/restauranfood.jpg'
+import Header from "./Header";
+import Footer from "./Footer";
+import Homepage from "./Homepage";
+import BookingPage from "./BookingPage";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import './styles.css';
+
 function Main(){
     return(
-        <section className="display">
-            <article className="displayText">
-                <h1>Little Lemon</h1>
-                <h2>Chicago</h2>
-                <p>We area family owned Mediterranean restaurant focused on traditional recipes served with a modern twist.</p>
-                <button type="button"><h3>Reserve a Table</h3></button>
-            </article>
-            <article className="imageContainer">
-                <img src={restauranfood}></img>
-            </article>
-            
-        </section>
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Homepage />}></Route>
+                <Route path="/booking" element={<BookingPage />}></Route>
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+        
+        
     );
 }
 
