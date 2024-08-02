@@ -1,6 +1,7 @@
 import CallToAction from "./CallToAction";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
+import AboutUs from "./AboutUs"
 
 function Homepage(){
     return(
@@ -8,6 +9,7 @@ function Homepage(){
             <CallToAction />
             <Specials />
             <Testimonials />
+            <AboutUs />
         </>
     );
 }
