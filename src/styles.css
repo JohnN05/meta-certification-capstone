@@ -12,6 +12,7 @@ h1{
     font-family: 'Markazi Text', sans-serif;
     font-size: 64px;
     font-weight: normal;
+    line-height: 0.5;
 }
 
 h2{
@@ -115,6 +116,7 @@ nav.Footer{
     background-color: white;
     border-radius: 15px;
     padding: 1em;
+    max-width: 80%;
 }
 
 .Footer h3{
@@ -309,13 +311,19 @@ nav.Footer{
 }
 
 .TestimonialsSection{
-    align-items: center;
     background-color: #fbdabb;
+    padding: 10vh 20vw 10vh 20vw;
+
+}
+
+.TestimonialsSection>.Container{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    height: 700px;
-    justify-content: space-evenly;
-    padding: 0 20vw 0 20vw
+    gap: 20px;
+    min-height: 550px;
+    justify-content: center;
+    
 }
 
 .TestimonialsSection h1{
@@ -332,7 +340,75 @@ nav.Footer{
     width: 100%;
 }
 
+.AboutUs{
+    padding: 10vh 20vw 10vh 20vw;
+    width: 60%;
+}
+
+.AboutUs>.Container{
+    align-items: center;
+    display:flex;
+    flex-wrap: wrap;
+    gap:90px;
+    justify-content: space-between;
+    justify-items: center;
+    
+}
+
+.AboutUs>.Container>*{
+    flex: 1;
+    height: 550px
+}
+
+.AboutUs article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.AboutUs h1, .AboutUs h2{
+    color: black;
+}
+
+.Owners{
+    display: grid;
+    height:70%;
+    width: 70%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.Owners>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Owners>img:nth-of-type(1){
+    grid-area: 1 / 4 / 5 / 8;
+    object-position: right bottom;
+    z-index: 1;
+}
+
+.Owners>img:nth-of-type(2){
+    grid-area: 3 / 1 / 8 / 5;
+    object-position: right top;
+}
+
 @media(max-width: 768px){
+    h1{
+        font-size: 48px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    h3, .Header{
+        font-size: 16px;
+    }
+    p, .Footer li, .Footer a{
+        font-size: 14px;
+    }
     nav.Header .mobileShow{
         align-items: center;
         display: flex;
@@ -349,11 +425,24 @@ nav.Footer{
         display:none;
     }
 
+    nav.Footer, .CallToAction, .Specials, .TestimonialsSection, .AboutUs{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
     .display{
         padding: 2em 1em 0 1em;
     }
 
     section>.imageContainer{
         display:none;
+    }
+
+    .Owners>img:nth-of-type(1){
+        display: none;
+    }
+    .Owners>img:nth-of-type(2){
+        grid-area: 1 / 1 / 8 / 8;
+        object-position: center bottom;
     }
 }
