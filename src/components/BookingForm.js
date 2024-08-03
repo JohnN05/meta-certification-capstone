@@ -25,7 +25,8 @@ function BookingForm(props){
                 <select id="res-time" 
                 value={resTime}
                 onChange={(e)=>{setResTime(e.target.value)}}>
-                    {props.availableTimes.map((timeOption)=>{
+                    {
+                    props.availableTimes.map((timeOption)=>{
                         return(
                             <option>{timeOption}</option>
                         );
