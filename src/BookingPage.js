@@ -1,8 +1,11 @@
 import BookingForm from "./BookingForm";
-function BookingPage(){
+
+
+function BookingPage(props){
+
     return(
         <>
-            <BookingForm />
+            <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} />
         </>
     );
 }
