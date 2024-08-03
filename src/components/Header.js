@@ -1,5 +1,5 @@
-import logo from './assets/Logo.svg';
-import burger from './assets/burger.svg';
+import logo from '../assets/Logo.svg';
+import burger from '../assets/burger.svg';
 import {Link} from 'react-router-dom';
 
 function Header(){

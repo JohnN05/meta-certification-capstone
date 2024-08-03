@@ -1,7 +1,7 @@
 import { fireEvent, getByText, render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
-import Main from "./Main";
+import Main from "../Main";
 
 describe('Proper routing', () => {
     
@@ -18,5 +18,9 @@ describe('Proper routing', () => {
 
         const submitButton = screen.getByRole('button', {name:"Make your reservation"});
         expect(submitButton).toBeInTheDocument();
+    })
+
+    test("Correct output for initializeTimes()", () => {
+        expect()
     })
 })

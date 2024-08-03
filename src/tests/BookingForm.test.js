@@ -1,5 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import BookingForm from "./BookingForm";
+import '@testing-library/jest-dom';
+import React, {useReducer} from "react";
+import BookingForm from "../components/BookingForm";
+import { initializeTimes, updateTimes } from "../components/Main";
 
 test("Changes available times", () => {
     const updateTimes = jest.fn();
@@ -30,4 +33,21 @@ test("Changing fields", () => {
     expect(dateInput.value).toBe(date);
     expect(guestsInput.value).toBe(guests);
     expect(occasionInput.value).toBe(occasion);
+})
+
+test('Renders the BookingForm heading', () => {
+    render(<BookingForm availableTimes={[]} dispatch={jest.fn}/>);
+    const headingElement = screen.getByText("Book Now");
+    expect(headingElement).toBeInTheDocument();
+})
+
+test("initialTimes function properly initializes", () => {
+    const result = initializeTimes();
+    expect(result).toEqual([]);
+})
+
+test("updateTimes returns same value provided in state", () => {
+    const expectedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    const result = updateTimes(undefined, undefined);
+    expect(result).toEqual(expectedTimes);
 })

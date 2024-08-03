@@ -1,4 +1,4 @@
-import restauranfood from './assets/restauranfood.jpg'
+import restauranfood from '../assets/restauranfood.jpg'
 import { Link } from 'react-router-dom';
 
 function CallToAction(){

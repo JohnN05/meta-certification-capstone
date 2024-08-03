@@ -8,7 +8,9 @@ function BookingForm(props){
     const [resOccasion, setResOccasion] = useState("");
     
     return(
+        
         <form styles="display: grid; max-width: 200px; gap: 20px">
+            <h1>Book Now</h1>
             <fieldset>
                 <label htmlFor="res-date">Choose date</label>
                 <input type="date" 

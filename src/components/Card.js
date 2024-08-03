@@ -1,4 +1,4 @@
-import delivery from './assets/fast-delivery.png';
+import delivery from '../assets/fast-delivery.png';
 
 function Card(props){
     return(

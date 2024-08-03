@@ -1,5 +1,5 @@
-import fullStar from "./assets/full-star.png";
-import halfStar from  "./assets/half-star.png";
+import fullStar from "../assets/full-star.png";
+import halfStar from  "../assets/half-star.png";
 function Rating(props){
     const stars = [];
     for(var i=0; i<Math.floor(props.count);i++){

@@ -1,5 +1,5 @@
-import OwnerPicA from "./assets/Mario and Adrian A.jpg";
-import OwnerPicB from "./assets/Mario and Adrian b.jpg";
+import OwnerPicA from "../assets/Mario and Adrian A.jpg";
+import OwnerPicB from "../assets/Mario and Adrian b.jpg";
 function AboutUs(){
     return(
         <section className="AboutUs">
