@@ -1,5 +1,6 @@
 
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm(props){
     const [resDate, setResDate] = useState("");
@@ -12,6 +13,8 @@ function BookingForm(props){
         color: resOccasion=="occasion" ? '#494949' : 'white'
     }
     
+    const navigate = useNavigate();
+
     return(
         
         <form>
@@ -67,12 +70,16 @@ function BookingForm(props){
             value="Make your reservation" 
             onSubmit={(e)=>{
                 e.preventDefault();
-                props.setFormData({
+                const success = props.submitForm({
                 date: {resDate},
                 time: {resTime},
                 guests: {resGuests},
-                occasion: {resOccasion},
-                })
+                occasion: {resOccasion}
+                });
+                
+                if(success){
+                    navigate("/booking-confirmed");
+                }
             }}
             />
         </form>
