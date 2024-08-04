@@ -8,13 +8,13 @@ import { fetchAPI, submitAPI} from "../FakeAPI";
 import '../styles.css';
 import ConfirmedBooking from "./ConfirmedBooking";
 
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
     const dateInput = new Date(action.type);
     const times = fetchAPI(dateInput.getDate());
     return times;
 };
 
-const initializeTimes = () => {
+export const initializeTimes = () => {
     const today = new Date();
     const initial = fetchAPI(today.getDate());
     return(initial);

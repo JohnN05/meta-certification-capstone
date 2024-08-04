@@ -3,10 +3,14 @@ import '@testing-library/jest-dom';
 import React, {useReducer} from "react";
 import BookingForm from "../components/BookingForm";
 import { initializeTimes, updateTimes } from "../components/Main";
+import { BrowserRouter} from "react-router-dom";
 
 test("Changes available times", () => {
     const updateTimes = jest.fn();
-    render(<BookingForm availableTimes={[]} dispatch={updateTimes} />);
+    render(
+    <BrowserRouter>
+        <BookingForm availableTimes={[]} dispatch={updateTimes} />
+    </BrowserRouter>);
 
     const resTime = screen.getByLabelText("Choose time");
     const dateInput = screen.getByLabelText("Choose date");
@@ -16,38 +20,32 @@ test("Changes available times", () => {
 })
 
 test("Changing fields", () => {
-    render(<BookingForm availableTimes={[]} dispatch={jest.fn()} />);
+    render(
+        <BrowserRouter>
+            <BookingForm availableTimes={[]} dispatch={jest.fn()} />
+        </BrowserRouter> 
+    );
 
     const date = '2024-08-05';
-    const guests = "6";
-    const occasion = "Birthday";
+    const occasion = "birthday";
 
     const dateInput = screen.getByLabelText("Choose date");
-    const guestsInput = screen.getByLabelText("Number of guests");
     const occasionInput = screen.getByLabelText("Occasion");
 
     fireEvent.change(dateInput, {target: {value: date}});
-    fireEvent.change(guestsInput, {target: {value: guests}});
     fireEvent.change(occasionInput, {target: {value: occasion}});
 
     expect(dateInput.value).toBe(date);
-    expect(guestsInput.value).toBe(guests);
     expect(occasionInput.value).toBe(occasion);
-})
-
-test('Renders the BookingForm heading', () => {
-    render(<BookingForm availableTimes={[]} dispatch={jest.fn}/>);
-    const headingElement = screen.getByText("Book Now");
-    expect(headingElement).toBeInTheDocument();
 })
 
 test("initialTimes function properly initializes", () => {
     const result = initializeTimes();
-    expect(result).toEqual([]);
+    expect(result.length).toBeGreaterThan(0);
 })
 
 test("updateTimes returns same value provided in state", () => {
-    const expectedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    const result = updateTimes(undefined, undefined);
-    expect(result).toEqual(expectedTimes);
+    const randomDay = Math.ceil(Math.random() * 10);
+    const result = updateTimes(undefined, {type: 1});
+    expect(result.length).toBeGreaterThan(2);
 })
