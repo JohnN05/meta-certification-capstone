@@ -22,7 +22,7 @@ h2{
     font-weight: bold;
 }
 
-h3, .Header{
+h3, label, input, select, .Button, .Header{
     font-family: 'Karla', sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -38,7 +38,7 @@ ul{
     list-style: none;
 }
 
-button{
+button, .Button{
     border-radius: 15px;
     background-color: #f4ce14;
     height: 55px;
@@ -396,6 +396,40 @@ nav.Footer{
     object-position: right top;
 }
 
+form{
+    padding: 75px 20vw 75px 20vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form>h1{
+    color: black;
+
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 2em 0 2em 0;
+    width: 250px;
+}
+
+input, select{
+    border-radius: 10px;
+    background-color: #edefee;
+    color: #494949;
+    height: 50px;
+    padding: 0.5em;
+    margin: 0 0 1em 0;
+}
+
+form>.Button{
+    width: 250px;
+}
+
+
 @media(max-width: 768px){
     h1{
         font-size: 48px;
@@ -425,7 +459,7 @@ nav.Footer{
         display:none;
     }
 
-    nav.Footer, .CallToAction, .Specials, .TestimonialsSection, .AboutUs{
+    nav.Footer, .CallToAction, .Specials, .TestimonialsSection, .AboutUs, form{
         padding-left: 5vw;
         padding-right: 5vw;
     }
@@ -444,5 +478,6 @@ nav.Footer{
     .Owners>img:nth-of-type(2){
         grid-area: 1 / 1 / 8 / 8;
         object-position: center bottom;
+
     }
 }

@@ -5,11 +5,16 @@ function BookingForm(props){
     const [resDate, setResDate] = useState("");
     const [resTime, setResTime] = useState("");
     const [resGuests, setResGuests] = useState(2);
-    const [resOccasion, setResOccasion] = useState("");
+    const [resOccasion, setResOccasion] = useState("occasion");
+
+    const occasionStyle = {
+        backgroundColor: resOccasion=="occasion" ? '#edefee' : '#495e57',
+        color: resOccasion=="occasion" ? '#494949' : 'white'
+    }
     
     return(
         
-        <form styles="display: grid; max-width: 200px; gap: 20px">
+        <form>
             <h1>Book Now</h1>
             <fieldset>
                 <label htmlFor="res-date">Choose date</label>
@@ -32,7 +37,7 @@ function BookingForm(props){
                         );
                     })}
                 </select>
-                <label htmlFor="guests">Number of guests</label>
+                <label htmlFor="guests">Number of guests: {resGuests}</label>
                 <input type="range" 
                 aria-valuemin={1}
                 aria-valuemax={10}
@@ -47,18 +52,29 @@ function BookingForm(props){
                 <label htmlFor="occasion">Occasion</label>
                 <select id="occasion" 
                 value={resOccasion}
-                onChange={(e)=>{setResOccasion(e.value)}}>
-                    <option>Birthday</option>
-                    <option>Engagement</option>
-                    <option>Anniversary</option>
+                onChange={(e)=>{
+                    setResOccasion(e.target.value)
+                }}
+                style={occasionStyle}
+                >
+                    <option value="occasion" style={occasionStyle}>Occasion</option>
+                    <option value="birthday" style={occasionStyle}>Birthday</option>
+                    <option value="engagement" style={occasionStyle}>Engagement</option>
+                    <option value="anniversary" style={occasionStyle}>Anniversary</option>
                 </select>
             </fieldset>
-            <input type="submit" 
+            <input className="Button" type="submit" 
             value="Make your reservation" 
             onSubmit={(e)=>{
                 e.preventDefault();
-            }
-            }/>
+                props.setFormData({
+                date: {resDate},
+                time: {resTime},
+                guests: {resGuests},
+                occasion: {resOccasion},
+                })
+            }}
+            />
         </form>
     );
 
