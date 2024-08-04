@@ -17,7 +17,25 @@ function BookingForm(props){
 
     return(
         
-        <form>
+        <form             
+        onSubmit={(e)=>{
+            e.preventDefault();
+            const success = props.submitForm({
+            date: {resDate},
+            time: {resTime},
+            guests: {resGuests},
+            occasion: {resOccasion}
+            });
+            
+            
+                
+            
+            if(success){
+                setTimeout(() => {
+                    navigate("/booking-confirmed");
+                }, 500);
+            }
+        }}>
             <h1>Book Now</h1>
             <fieldset>
                 <label htmlFor="res-date">Choose date</label>
@@ -68,19 +86,6 @@ function BookingForm(props){
             </fieldset>
             <input className="Button" type="submit" 
             value="Make your reservation" 
-            onSubmit={(e)=>{
-                e.preventDefault();
-                const success = props.submitForm({
-                date: {resDate},
-                time: {resTime},
-                guests: {resGuests},
-                occasion: {resOccasion}
-                });
-                
-                if(success){
-                    navigate("/booking-confirmed");
-                }
-            }}
             />
         </form>
     );
