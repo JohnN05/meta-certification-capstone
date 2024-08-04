@@ -4,14 +4,15 @@ import Homepage from "./Homepage";
 import BookingPage from "./BookingPage";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React, {useReducer} from "react";
-import { fetchAPI} from "../FakeAPI";
+import { fetchAPI, submitAPI} from "../FakeAPI";
 import '../styles.css';
+import ConfirmedBooking from "./ConfirmedBooking";
 
 const updateTimes = (state, action) => {
     const dateInput = new Date(action.type);
     const times = fetchAPI(dateInput.getDate());
     return times;
-}
+};
 
 const initializeTimes = () => {
     const today = new Date();
@@ -19,8 +20,12 @@ const initializeTimes = () => {
     return(initial);
 };
 
-function Main(){
+const submitForm = (formData) => {
+    return submitAPI(formData);
+};
 
+
+function Main(){
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
     return(
@@ -28,7 +33,13 @@ function Main(){
             <Header />
             <Routes>
                 <Route path="/" element={<Homepage />}></Route>
-                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />}></Route>
+                <Route path="/booking" element={<BookingPage 
+                availableTimes={availableTimes} 
+                dispatch={dispatch} 
+                submitForm = {submitForm}
+                />}>
+                </Route>
+                <Route path="/booking-confirmed" element={<ConfirmedBooking />}></Route>
             </Routes>
             <Footer />
         </BrowserRouter>
