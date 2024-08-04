@@ -19,7 +19,7 @@ h2{
     color: white;
     font-family: 'Markazi Text', sans-serif;
     font-size: 40px;
-    font-weight: bold;
+    font-weight:600;
 }
 
 h3, label, input, select, .Button, .Header{
@@ -429,6 +429,24 @@ form>.Button{
     width: 250px;
 }
 
+.ConfirmedBooking{
+    background-color: #fbdabb;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 20vw 50px 20vw;
+}
+
+.ConfirmedBooking>h1, .ConfirmedBooking>h2{
+    color: black;
+}
+
+.ConfirmedBooking>img{
+    border-radius: 15px;
+    object-fit: cover;
+    width: 100%
+}
+
 
 @media(max-width: 768px){
     h1{
@@ -459,7 +477,7 @@ form>.Button{
         display:none;
     }
 
-    nav.Footer, .CallToAction, .Specials, .TestimonialsSection, .AboutUs, form{
+    nav.Footer, .CallToAction, .Specials, .TestimonialsSection, .AboutUs, form, .ConfirmedBooking{
         padding-left: 5vw;
         padding-right: 5vw;
     }
