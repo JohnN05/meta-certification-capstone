@@ -58,6 +58,7 @@ function BookingForm(props){
                     setDateError(!validDate);
                     props.dispatch({type: e.target.value})
                 }}
+                aria-invalid={dateError}
                 />
                 {dateError && <p>Please choose a date for your reservation</p>}
                 <label htmlFor="res-time">Choose time</label>
@@ -68,7 +69,9 @@ function BookingForm(props){
                     const validTime = e.target.value!="";
                     setValid({...valid, time:validTime});
                     setTimeError(!validTime);
-                    }}>
+                    }}
+                aria-invalid={timeError}
+                >
                     {
                     props.availableTimes.map((timeOption)=>{
                         return(
@@ -99,6 +102,7 @@ function BookingForm(props){
                     setOccasionError(!validOccasion);
                 }}
                 style={occasionStyle}
+                aria-invalid={occasionError}
                 >
                     <option value="occasion" style={occasionStyle}>Occasion</option>
                     <option value="birthday" style={occasionStyle}>Birthday</option>

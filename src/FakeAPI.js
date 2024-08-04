@@ -7,6 +7,7 @@ const seededGenerator = (date, hour) => {
 
 export const fetchAPI = function(date) {
     let result = [];
+    result.push('');
 
     for(let i = 17; i <= 23; i++) {
         if(seededGenerator(date, i) < 0.5) {
