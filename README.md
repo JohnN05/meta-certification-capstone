@@ -7,7 +7,7 @@ The repository was made to display the entire front-end development process requ
 
 ## Installation Instructions
 
-Follow these intructions to view an operate the Little Lemon Restaurant website.
+Follow these intructions to browse the Little Lemon Restaurant website.
 
 ### Prerequisites
 
